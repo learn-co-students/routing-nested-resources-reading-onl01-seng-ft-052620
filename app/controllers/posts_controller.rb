@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    if params[:author_id]
+      @posts = Author.find(params[:author_id]).posts
+        #params[:author_id] comes from rails providing it for us through the nested route, so we don't have to worry abot collision with :id parameter that posts#show is looking for. 
+    else
+      @posts = Post.all
+    end
   end
 
   def show
