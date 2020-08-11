@@ -1,5 +1,5 @@
 # Routing And Nested Resources
-
+##No additions needed
 ## Objectives
 
 1. Understand the value of nested routes
@@ -212,7 +212,7 @@ In `posts/index.html.erb`, we already show the author's name, so let's add a lin
   ...
 
   <h2><%= post.title %></h2>
-  
+
   <!-- change the name to a link -->
   <h3>by: <%= link_to post.author.name, author_posts_path(post.author) %></h3>
   <p><%= post.description %></p>
@@ -265,4 +265,3 @@ In addition, the reason to put the ID of the resource in the URL is so that we h
 Nesting resources is a powerful tool that helps you keep your routes neat and tidy and is better than dynamic route segments for representing parent/child relationships in your system.
 
 However, as a general rule, you should only nest resources one level deep and ensure that you are considering Separation of Concerns in your routing.
-
